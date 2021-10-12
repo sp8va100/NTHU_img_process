@@ -1,0 +1,9 @@
+function resizedImage = resizeImage_replication(originalImage, scalingFactor)
+
+[orgImgrow, orgImgcol] = size(originalImage);
+rowIndx = ceil([1 : floor(orgImgrow * scalingFactor)] ./ scalingFactor);
+colIndx = ceil([1 : floor(orgImgcol * scalingFactor)] ./ scalingFactor);
+
+tmp = originalImage(rowIndx, :);
+resizedImage = tmp(:, colIndx);
+end
